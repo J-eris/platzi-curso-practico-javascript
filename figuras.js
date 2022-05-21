@@ -17,9 +17,9 @@ console.groupEnd();
 
 //Código del triangulo
 console.group("Triangulos");
-const ladoTriangulo1 = 6;
-const ladoTriangulo2 = 6;
-const baseTriangulo = 4;
+// const ladoTriangulo1 = 6;
+// const ladoTriangulo2 = 6;
+// const baseTriangulo = 4;
 
 // console.log("Los lados del triangulo miden: " 
 // + ladoTriangulo1 + "cm, " 
@@ -85,6 +85,30 @@ function calcularAreaCuadrado() {
   const value = input.value;
 
   const area = areaCuadrado(value);
+  alert(area);
+}
+
+function calcularPerimetroTriangulo() {
+  const inputTriangulo1 = document.getElementById("inputTriangulo1");
+  const value1 = inputTriangulo1.value;
+  const inputTriangulo2 = document.getElementById("inputTriangulo2");
+  const value2 = inputTriangulo2.value;
+  const inputTriangulo3 = document.getElementById("inputTriangulo3");  
+  const value3 = inputTriangulo3.value;
+
+  const perimetro = perimetroTriangulo(value1, value2, value3);
+  alert(perimetro);
+}
+
+function calcularAreaTriangulo() {
+  const input1 = document.getElementById("inputTriangulo1");
+  const value1 = input1.value;
+  const input2 = document.getElementById("inputTriangulo2");
+  const value2 = input2.value;
+  const input3 = document.getElementById("inputTriangulo3");
+  const value3 = input3.value;  
+
+  const area = areaTriangulo(input1, input2, input3);
   alert(area);
 }
 
