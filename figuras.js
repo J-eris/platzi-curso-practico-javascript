@@ -30,8 +30,9 @@ console.group("Triangulos");
 // console.log("La altura del Triangulo es de: " + alturaTriangulo + "cm");
 
 
-function perimetroTriangulo(lado1, lado2, base) {
-  return lado1 + lado2 + base;
+function perimetroTriangulo(lado1, lado2, lado3) {
+  const sumPeri = lado1 + lado2 + lado3;
+  return sumPeri;
 }
 //console.log("El perimetro del triangulo es: " + perimetroTriangulo + "cm");
 
@@ -77,7 +78,9 @@ function calcularPerimetroCuadrado() {
   const value = input.value;
 
   const perimetro = perimetroCuadrado(value);
-  alert(perimetro);
+  const mostrarPerimetro = document.getElementById('mostrarPerimetro');
+  mostrarPerimetro.innerText = "El perimetro del cuadrado son: " + perimetro;
+  // alert(perimetro);
 }
 
 function calcularAreaCuadrado() {
@@ -85,30 +88,36 @@ function calcularAreaCuadrado() {
   const value = input.value;
 
   const area = areaCuadrado(value);
-  alert(area);
+  const mostrarArea = document.getElementById("mostrarArea");
+  mostrarArea.innerText = "El area del cuadrado son: " + area + "^2";
+  // alert(area);
 }
 
 function calcularPerimetroTriangulo() {
-  const inputTriangulo1 = document.getElementById("inputTriangulo1");
-  const value1 = inputTriangulo1.value;
-  const inputTriangulo2 = document.getElementById("inputTriangulo2");
-  const value2 = inputTriangulo2.value;
-  const inputTriangulo3 = document.getElementById("inputTriangulo3");  
-  const value3 = inputTriangulo3.value;
+  const input1 = document.getElementById("inputTriangulo1");
+  const value1 = parseInt(input1.value);
 
-  const perimetro = perimetroTriangulo(value1, value2, value3);
-  alert(perimetro);
+  const input2 = document.getElementById("inputTriangulo2");
+  const value2 = parseInt(input2.value);
+
+  const input3 = document.getElementById("inputTriangulo3");  
+  const value3 = parseInt(input3.value);
+
+  const perimetroTria = perimetroTriangulo(value1, value2, value3);
+  // console.log(perimetroTria);
+  const mostrarPeriTria = document.getElementById('mostrarPeriTria');
+  mostrarPeriTria.innerHTML = "El perimetro del triangulo son: " + perimetroTria;
+  // alert(perimetro);
 }
 
 function calcularAreaTriangulo() {
   const input1 = document.getElementById("inputTriangulo1");
   const value1 = input1.value;
-  const input2 = document.getElementById("inputTriangulo2");
-  const value2 = input2.value;
+  
   const input3 = document.getElementById("inputTriangulo3");
   const value3 = input3.value;  
 
-  const area = areaTriangulo(input1, input2, input3);
+  const area = areaTriangulo(value1, value3);
   alert(area);
 }
 
